@@ -8,13 +8,36 @@
     <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
-    <section class="bg-navy-tone min-h-screen relative z-auto">
-        <header class="flex justify-between items-center p-[1rem] fixed top-0 left-0 w-full z-[10] bg-navy-tone">
+    <section class="min-h-screen relative z-auto">
+        <picture class="absolute inset-0 -z-10" aria-hidden="true">
+
+            <!--Desktop background image-->
+            <source
+                media="(min-width: 1024px)"
+                srcset="./starter-code/assets/home/background-home-desktop.jpg"
+            >
+
+            <!--Tablet background image-->
+            <source 
+                media="(min-width: 640px)" 
+                srcset="./starter-code/assets/home/background-home-tablet.jpg"
+            >
+
+            <!--Mobile background image-->
+            <img 
+                src="./starter-code/assets/home/background-home-mobile.jpg" 
+                alt="background image"
+                class="w-full h-full object-cover"
+            >
+        </picture>
+
+        <header class="flex justify-between items-center p-[1rem] lg:py-[1rem] lg:px-[3rem] fixed top-0 left-0 w-full z-[10]">
             <img 
                 src="./starter-code/assets/shared/logo.svg" 
                 alt="logo"
                 class=""
             >
+            <div class="hidden lg:block flex-grow mx-6 border-t-2 border-t-white/40 absolute top-1/2 left-[120px] right-[530px] -translate-y-1/2 z-0"></div>
 
             <ul 
                 class="list-none absolute top-0 right-0 z-[100] min-h-screen w-1/2 bg-navy-tone/70 hidden flex-col gap-[1rem] px-4 py-16 transition duration-1000" 
@@ -68,7 +91,7 @@
             </div>
 
             <div>
-                <p class="text-navy-tone">Explore</p>
+                <p class="text-white">Explore</p>
             </div>
         </section>
     </section>

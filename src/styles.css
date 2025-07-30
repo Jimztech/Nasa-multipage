@@ -2,5 +2,21 @@
 
 @theme {
     --color-navy-tone: hsl(231, 33%, 7%);
+    --color-opaque-navy-tone: hsla(231, 33%, 7%, 0.7);
     --color-lavender-blue: hsl(229, 82%, 90%);
+}
+
+@media (min-width: 900px) {
+    #open-menu {
+        display: none;
+    }
+
+    #nav-links {
+        all: unset;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        background-color: var(--color-opaque-navy-tone);
+        padding: 2rem 3rem;
+    }
 }
