@@ -56,6 +56,52 @@
             >
         </picture>
 
+        <!-- Crew bg-image -->
+        <picture class="hidden absolute inset-0 -z-10" aria-hidden="true" id="crew-background">
+
+            <!--Desktop background image-->
+            <source 
+                media="(min-width: 1024px)" 
+                srcset="./starter-code/assets/crew/background-crew-desktop.jpg"
+            >
+
+            <!--Tablet background image-->
+            <source 
+                media="(min-width: 640px)" 
+                srcset="./starter-code/assets/crew/background-crew-tablet.jpg"
+            >
+
+            <!--Mobile background image-->
+            <img 
+                src="./starter-code/assets/crew/background-crew-mobile.jpg" 
+                alt=""
+                class="w-full h-full object-cover"
+            >
+        </picture>
+
+        <!-- Technology bg-image -->
+        <picture class="hidden absolute inset-0 -z-10" aria-hidden="true" id="tech-background">
+
+            <!--Desktop background image-->
+            <source 
+                media="(min-width: 1024px)" 
+                srcset="./starter-code/assets/technology/background-technology-desktop.jpg"
+            >
+
+            <!--Tablet background image-->
+            <source 
+                media="(min-width: 640px)" 
+                srcset="./starter-code/assets/technology/background-technology-tablet.jpg"
+            >
+
+            <!--Mobile background image-->
+            <img 
+                src="./starter-code/assets/technology/background-technology-mobile.jpg" 
+                alt=""
+                class="w-full h-full object-cover"
+            >
+        </picture>
+
         <header class="flex justify-between items-center p-[1rem] lg:py-[1rem] lg:px-[3rem] fixed top-0 left-0 w-full z-[10]">
             <img 
                 src="./starter-code/assets/shared/logo.svg" 
