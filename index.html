@@ -196,7 +196,7 @@
                 <span class="tracking-widest">Pick your destination</span>
             </h1>
 
-            <section class="flex flex-col lg:flex-row lg:py-[6rem] lg:px-[6rem]">
+            <section class="flex flex-col lg:flex-row lg:gap-[4rem] lg:py-[6rem] lg:px-[6rem]">
                 <div class="px-[2.5rem] md:px-[0] flex justify-center">
                     <img 
                         src="./starter-code/assets/destination/image-moon.png" 
@@ -206,41 +206,70 @@
                 </div>
 
                 <div class="py-[2rem] lg:py-[0] lg:w-[600px]">
-                    <ul class="uppercase flex items-center justify-between">
+                    <ul class="uppercase flex items-center justify-between md:justify-center md:gap-[1.5rem] lg:justify-start">
                         <li>
-                            <a href="">moon</a>
+                            <a 
+                                href="#moon" 
+                                class="uppercase border-b-4 border-transparent pb-4 transition-all duration-300 hover:border-white"
+                                data-sublink="moon"
+                            >
+                                moon
+                            </a>
                         </li>
 
                         <li>
-                            <a href="">mars</a>
+                            <a 
+                                href="#mars"
+                                class="uppercase border-b-4 border-transparent pb-4 transition-all duration-300 hover:border-white"
+                                data-sublink="mars"
+                            >
+                                mars
+                            </a>
                         </li>
 
                         <li>
-                            <a href="">ethiopia</a>
+                            <a 
+                                href="#ethiopia"
+                                class="uppercase border-b-4 border-transparent pb-4 transition-all duration-300 hover:border-white"
+                                data-sublink="ethiopia"
+                            >
+                                ethiopia
+                            </a>
                         </li>
 
                         <li>
-                            <a href="">titan</a>
+                            <a 
+                                href="#titan"
+                                class="uppercase border-b-4 border-transparent pb-4 transition-all duration-300 hover:border-white"
+                                data-sublink="titan"
+                            >
+                                titan
+                            </a>
                         </li>
                     </ul>
                     
 
-                    <p>moon</p>
-                    <p>
+                    <p class="py-[2rem] lg:py-[3rem] text-4xl lg:text-8xl uppercase text-center lg:text-left tracking-widest">moon</p>
+
+                    <p class="text-white/70 text-center lg:text-left">
                         See our planet as you’ve never seen it before. 
                         A perfect relaxing trip away to help regain perspective 
                         and come back refreshed. While you’re there, take in some history 
                         by visiting the Luna 2 and Apollo 11 landing sites.
                     </p>
-                    <section></section>
-                    <section>
-                        <div>
-                            <span>avg distance</span>
-                            <p>384,400KM</p>
+
+                    <section class="lg:my-[3rem] my-[1.5rem] border-t-1"></section>
+
+                    <section class="flex flex-col md:flex-row md:justify-around lg:justify-start gap-[2rem] md:gap-0 lg:gap-[4rem]">
+
+                        <div class="uppercase">
+                            <span class="text-white/70">avg distance</span>
+                            <p class="text-3xl my-[0.5rem]">384,400KM</p>
                         </div>
-                        <div>
-                            <span>Est. travel time</span>
-                            <p>3 DAYS</p>
+
+                        <div class="uppercase">
+                            <span class="text-white/70">Est. travel time</span>
+                            <p class="text-3xl my-[0.5rem]">3 DAYS</p>
                         </div>
                     </section>
                 </div>
