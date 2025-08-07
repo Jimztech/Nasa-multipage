@@ -77,3 +77,52 @@ window.addEventListener("hashchange", () => {
     showSection(route);
 });
 
+
+// Fetching destination data.
+let destinationData = [];
+
+fetch("./starter-code/data.json")
+    .then(response => response.json())
+    .then(data => {
+        destinationData = data.destinations;
+
+        // shows moon by default
+        renderDestination("moon");
+    })
+    .catch(error => console.error("Failed to fetch data:", error));
+
+// Function to render destination
+function renderDestination(name) {
+    const destination = destinationData.find(
+        (dest) => dest.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if(!destination) {
+        return;
+    }
+
+    document.getElementById("destination-image").src = destination.images.png;
+    document.getElementById("destination-image").alt = destination.name;
+    document.getElementById("destination-name").textContent = destination.name;
+    document.getElementById("destination-description").textContent = destination.description;
+    document.getElementById("destination-distance").textContent = destination.distance;
+    document.getElementById("destination-travel").textContent = destination.travel;
+
+    //Highlighting active tab
+    document.querySelectorAll("[data-sublink]").forEach(link => {
+        if(link.dataset.sublink === name.toLowerCase()) {
+            link.classList.add("border-white");
+        } else {
+            link.classList.remove("border-white");
+        }
+    });
+}
+
+// Adding event listeners to destination tabs.
+document.querySelectorAll("[data-sublink]").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const name = link.dataset.sublink;
+        renderDestination(name);
+    });
+});
