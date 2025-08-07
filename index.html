@@ -111,7 +111,7 @@
             <div class="hidden lg:block flex-grow mx-6 border-t-2 border-t-white/40 absolute top-1/2 left-[120px] right-[530px] -translate-y-1/2 z-0"></div>
 
             <ul 
-                class="list-none absolute top-0 right-0 z-[100] min-h-screen w-1/2 bg-navy-tone/70 hidden flex-col gap-[1rem] px-4 py-16 transition duration-1000" 
+                class="list-none absolute top-0 right-0 z-[100] min-h-screen w-1/2 bg-navy-tone/70 hidden flex-col gap-[1rem] px-4 py-16 transition duration-1000 lg:cursor-pointer" 
                 id="nav-links"
             >
                 <li>
@@ -205,7 +205,7 @@
                 </div>
 
                 <div class="py-[2rem] lg:py-[0] lg:w-[600px]">
-                    <ul class="uppercase flex items-center justify-between md:justify-center md:gap-[1.5rem] lg:justify-start">
+                    <ul class="uppercase flex items-center justify-between md:justify-center md:gap-[1.5rem] lg:justify-start lg:cursor-pointer">
                         <li>
                             <a 
                                 href="#moon" 
@@ -276,8 +276,37 @@
         </section>
 
         <!--Crew Page-->
-        <section class="hidden content-page py-[5.5rem] px-[2rem] lg:py-[6.5rem] lg:px-[3rem]" id="crew-page">
-            <h1 class="text-amber-300">Here are your crew members</h1>
+        <section class="hidden content-page py-[7rem] px-[2rem] lg:py-[6.5rem] lg:px-[3rem] text-white" id="crew-page">
+            <h1 class="text-center text-xl lg:text-2xl uppercase md:text-left py-[2rem]">
+                <span class="mr-4 tracking-widest">02</span>
+                <span class="tracking-widest">meet your crew</span>
+            </h1>
+
+            <!--dot tiktok like swipe here, would use absolute positioning on it to manage it's position-->
+            <section class="" id="dot-indicators">
+                <div id="dot"></div>
+            </section>
+
+            <section class="relative" id="crew-slider">
+                <div id="slide">
+                    <section class="">
+                        <div>
+                            <h2 class="text-2xl md:text-4xl text-white/70 uppercase">Commander</h2>
+                            <p class="text-4xl md:text-6xl uppercase">Douglas Hurley</p>
+
+                            <p>
+                                Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+                                and former NASA astronaut. He launched into space for the third time as 
+                                commander of Crew Dragon Demo-2.
+                            </p>
+                        </div>
+
+                        <div>
+                            <img src="./starter-code/assets/crew/image-douglas-hurley.png">
+                        </div>
+                    </section>
+                </div>
+            </section>
         </section>
 
         <!--Tech Page-->
