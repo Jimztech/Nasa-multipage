@@ -80,13 +80,19 @@ window.addEventListener("hashchange", () => {
 
 // Fetching destination data.
 let destinationData = [];
+let crewData = [];
 
 fetch("./starter-code/data.json")
     .then(response => response.json())
     .then(data => {
         destinationData = data.destinations;
+        crewData = data.crew;
+        createCrewSlides(crewData);
 
-        // shows moon by default
+        // Initializing glide
+        const glide = new Glide(".glide").mount();
+
+        // shows moon by default in destination page
         renderDestination("moon");
     })
     .catch(error => console.error("Failed to fetch data:", error));
@@ -117,6 +123,47 @@ function renderDestination(name) {
         }
     });
 }
+
+// Creating slide carousels with glide js
+function createCrewSlides(crewData) {
+    const trackElement = document.querySelector(".glide__track");
+
+    // The slides container
+    const slidesContainer = document.createElement("ul");
+    slidesContainer.className = "glide__slides";
+
+    // Building slides with crewData
+    crewData.forEach(crew => {
+        const slide = document.createElement("li");
+        slide.className = "glide__slide";
+
+        slide.innerHTML = `
+            <section class="flex flex-col lg:flex-row gap-[4rem] py-[2rem] lg:px-[2rem] lg:text-left text-center">  
+                <div class="lg:self-center">
+                    <h2 class="text-2xl md:text-4xl text-white/70 uppercase py-[0.5rem]">${crew.role}</h2>
+                    <p class="text-4xl md:text-6xl uppercase py-[1rem]">${crew.name}</p>
+
+                    <p class="lg:w-[35rem] text-white/70" id="crew-bio">
+                        ${crew.bio}
+                    </p>
+                </div>
+
+                <div class="self-center lg:self-auto">
+                    <img 
+                        src="${crew.images.png}" 
+                        alt="${crew.name}"
+                    >
+                </div>
+            </section>
+        `;
+
+        slidesContainer.appendChild(slide);
+    });
+
+    trackElement.innerHTML = "";
+    trackElement.appendChild(slidesContainer);
+}
+
 
 // Adding event listeners to destination tabs.
 document.querySelectorAll("[data-sublink]").forEach(link => {
