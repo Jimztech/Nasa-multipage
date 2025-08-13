@@ -304,25 +304,26 @@
                 <span class="tracking-widest">Space launch 101</span>
             </h1>
 
-            <div class="py-[2rem] flex flex-col items-center lg:py-0 lg:flex-row">
+            <div class="py-[2rem] flex flex-col items-center lg:py-0 lg:flex-row" id="tech-container">
                 <!-- mobile image -->
                 <img 
                     src="./starter-code/assets/technology/image-launch-vehicle-landscape.jpg" 
                     class="lg:hidden"
+                    id="landscape"
                 >
 
-                <ul class="py-[2rem] flex gap-6 lg:flex-col">
-                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center">1</li>
-                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center">2</li>
-                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center">3</li>
+                <ul class="py-[2rem] flex gap-6 lg:flex-col cursor-pointer">
+                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center" data-change="1">1</li>
+                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center" data-change="2">2</li>
+                    <li class="rounded-full border-1 border-white w-10 h-10 flex justify-center items-center" data-change="3">3</li>
                 </ul>
                 
                 <div class="text-center lg:text-left lg:px-[2rem]">
                     <h2 class="uppercase text-xl text-white/70 md:text-2xl py-[1rem]">The terminology...</h2>
-                    <p class="uppercase text-3xl">Launch vehicle</p>
+                    <p class="uppercase text-3xl" id="tech-name">Launch vehicle</p>
                 
 
-                    <p class="text-white/80 py-[1rem] px-[2rem] lg:px-0">
+                    <p class="text-white/80 py-[1rem] px-[2rem] lg:px-0" id="tech-description">
                         A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
                         payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
                         WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
@@ -334,6 +335,7 @@
                 <img 
                     src="./starter-code/assets/technology/image-launch-vehicle-portrait.jpg" 
                     class="hidden lg:block"
+                    id="portrait"
                 >
             </div>
         </section>

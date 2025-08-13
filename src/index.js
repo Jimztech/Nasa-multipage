@@ -3,6 +3,7 @@ const navBar = document.getElementById("nav-links");
 const links = document.querySelectorAll("[data-link]");
 const pages = document.querySelectorAll(".content-page");
 const backgrounds = document.querySelectorAll("picture[id$='-background']");
+const numSwitch = document.querySelectorAll("[data-change]");
 
 
 openMenu.addEventListener("click", () => {
@@ -81,13 +82,24 @@ window.addEventListener("hashchange", () => {
 // Fetching destination data.
 let destinationData = [];
 let crewData = [];
+let techData = [];
 
 fetch("./starter-code/data.json")
     .then(response => response.json())
     .then(data => {
+        // destination data
         destinationData = data.destinations;
+
+        // crew data
         crewData = data.crew;
         createCrewSlides(crewData);
+
+        // tech data
+        techData = data.technology;
+        renderTechPage(0);
+
+        // Tech page event listener
+        addTechEventListeners();
 
         // Initializing glide
         const glide = new Glide(".glide").mount();
@@ -164,6 +176,52 @@ function createCrewSlides(crewData) {
     trackElement.appendChild(slidesContainer);
 }
 
+function renderTechPage(index) {
+    // Where I wanted to dynamically sort the data from the data.json file
+    const tech = techData[index];
+
+    if(!tech) {
+        console.error("No tech data found for index:", index);
+        return;
+    }
+
+    // Updating the content
+    document.getElementById("tech-name").textContent = tech.name;
+    document.getElementById("tech-description").textContent = tech.description;
+    document.getElementById("landscape").src =  tech.images.landscape;
+    document.getElementById("portrait").src = tech.images.portrait;
+
+    updateActiveButton(index);
+}
+
+
+// Styling active button dynamically in the tech page
+function updateActiveButton(activeIndex) {
+    // Removing active styling from all buttons
+    numSwitch.forEach(button => {
+        button.classList.remove("bg-white", "text-black");
+    });
+
+    // Adding active styling to active button.
+    const activeButton = document.querySelector(`[data-change="${activeIndex + 1}"]`);
+    if(activeButton) {
+        activeButton.classList.add("bg-white", "text-black");
+    }
+}
+
+// Adding event listeners to the tech page buttons
+function addTechEventListeners() {
+    numSwitch.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const buttonNumber = parseInt(button.dataset.change);
+            const index = buttonNumber - 1;
+
+            renderTechPage(index);
+        })
+    })
+}
 
 // Adding event listeners to destination tabs.
 document.querySelectorAll("[data-sublink]").forEach(link => {
