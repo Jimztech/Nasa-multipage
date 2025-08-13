@@ -84,7 +84,7 @@ let destinationData = [];
 let crewData = [];
 let techData = [];
 
-fetch("./starter-code/data.json")
+fetch("./data.json")
     .then(response => response.json())
     .then(data => {
         // destination data
